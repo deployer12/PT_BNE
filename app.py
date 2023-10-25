@@ -3,7 +3,6 @@ from pymongo import MongoClient
 import requests
 from datetime import datetime, timedelta
 from bson import ObjectId
-
 import os
 from os.path import join, dirname
 from dotenv import load_dotenv
@@ -19,6 +18,9 @@ db = client[DB_NAME]
 
 app = Flask(__name__)
 app.secret_key = "your_secret_key"
+
+client = MongoClient("mongodb+srv://soys:123@cluster0.iwvcwt0.mongodb.net/?retryWrites=true&w=majority")
+db = client.pkl2
 
 @app.route('/')
 def home():
